@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IniUx", "IniUx\IniUx.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IniUxTests", "IniUxTests\IniUxTests.csproj", "{DC02ED3F-D81E-4AD2-83F6-969AAD1B5A5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IniUx.Example", "IniUx.Example\IniUx.Example.csproj", "{522470C3-4343-46D7-82C6-E2E75F819C39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IniUx.Example", "IniUx.Example\IniUx.Example.csproj", "{522470C3-4343-46D7-82C6-E2E75F819C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
