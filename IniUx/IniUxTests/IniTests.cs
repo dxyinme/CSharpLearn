@@ -13,13 +13,13 @@ namespace IniUx.Tests
         [Fact]
         public void ReadContentNormalTest()
         {
-            Dictionary<string, string> wanted = new();
-            wanted.Add("t1", "s2248f394j");
-            wanted.Add("scemi2", "qoe2it74t4");
-            wanted.Add("ciciInt", "100009");
-            wanted.Add("uuuQuota", "123983r");
-            wanted.Add("PPPPP", "你好呀");
-            var wantedSectionName = "normal_test";
+            var queries = new List<Tuple<string, string, string>> {
+                new("normal_test", "t1", "s2248f394j"),
+                new("normal_test", "scemi2", "qoe2it74t4"),
+                new("normal_test", "ciciInt", "100009"),
+                new("normal_test", "uuuQuota", "123983r"),
+                new("normal_test", "PPPPP", "你好呀"),
+            };
             string normalInfo = @"
 [normal_test]
 t1=s2248f394j
@@ -27,13 +27,11 @@ scemi2=qoe2it74t4
 ciciInt=100009
 uuuQuota=""123983r""
 PPPPP=你好呀";
-            IniSection iniSection = new(normalInfo);
-            foreach (var k in wanted) 
+            IniBody body = new(normalInfo);
+            foreach (var q in queries)
             {
-                Assert.Equal(k.Value, iniSection.Kv[k.Key]);
+                Assert.Equal(q.Item3, body.GetItem(q.Item1, q.Item2));
             }
-            Assert.True(iniSection.Kv.SequenceEqual(wanted));
-            Assert.True(iniSection.SectionName.Equals(wantedSectionName));
         }
     }
 }

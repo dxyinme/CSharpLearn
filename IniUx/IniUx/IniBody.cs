@@ -51,6 +51,16 @@ namespace IniUx
         {
             return _str2sections.Keys;
         }
+
+        public string? GetItem(string sectionName, string key)
+        {
+            var exist = _str2sections.TryGetValue(sectionName, out IniSection? section);
+            if (!exist || section == null) {
+                return null;
+            }
+            section.Kv.TryGetValue(key,out string? res);
+            return res;
+        }
         static private KeyValuePair<string, string> ParseLineToKv(string line)
         {
             var p = line.Trim().Split("=");
