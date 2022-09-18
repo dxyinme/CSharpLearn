@@ -19,6 +19,9 @@ namespace IniUx.Tests
                 new("normal_test", "ciciInt", "100009"),
                 new("normal_test", "uuuQuota", "123983r"),
                 new("normal_test", "PPPPP", "你好呀"),
+                new("XXXOi我", "tag1", "1"),
+                new("XXXOi我", "tag2", "2"),
+                new("XXXOi我", "tag3", "3"),
             };
             string normalInfo = @"
 [normal_test]
@@ -26,7 +29,12 @@ t1=s2248f394j
 scemi2=qoe2it74t4
 ciciInt=100009
 uuuQuota=""123983r""
-PPPPP=你好呀";
+PPPPP=你好呀
+[XXXOi我]
+tag1=1
+tag2=2
+tag3=3
+";
             IniBody body = new(normalInfo);
             foreach (var q in queries)
             {

@@ -13,5 +13,10 @@ namespace IniUx
             Kv = new();
             SectionName = sectionName;
         }
+
+        public IniSection(string sectionName, Dictionary<string, string> kv) : this(sectionName)
+        {
+            Kv = kv;
+        }
     }
 }

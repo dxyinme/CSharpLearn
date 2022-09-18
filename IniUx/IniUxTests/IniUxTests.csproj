@@ -24,4 +24,9 @@
     <ProjectReference Include="..\IniUx\IniUx.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="testdata\normal.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
