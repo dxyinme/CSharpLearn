@@ -41,5 +41,20 @@ tag3=3
                 Assert.Equal(q.Item3, body.GetItem(q.Item1, q.Item2));
             }
         }
+
+        [Fact]
+        public void ReadFileNormalTest()
+        {
+            var queries = new List<Tuple<string, string, string>> {
+                
+            };
+            var fileName = "normal.ini";
+            var content = File.ReadAllText(fileName);
+            IniBody body = new(content);
+            foreach (var q in queries)
+            {
+                Assert.Equal(q.Item3, body.GetItem(q.Item1, q.Item2));
+            }
+        }
     }
 }

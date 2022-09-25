@@ -74,5 +74,11 @@ namespace IniUx
             }
             return new KeyValuePair<string, string>(p[0], p[1]);
         }
+
+        static private List<string> RemoveMark(string[] o) 
+        {
+            var results = new List<string>();
+            return results;
+        }
     }
 }
