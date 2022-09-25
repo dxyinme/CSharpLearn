@@ -28,5 +28,8 @@
     <None Update="testdata\normal.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+	<None Update="testdata\normal_withoutmark.ini">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
   </ItemGroup>
 </Project>

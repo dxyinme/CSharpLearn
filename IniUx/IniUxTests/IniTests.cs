@@ -48,7 +48,7 @@ tag3=3
             var queries = new List<Tuple<string, string, string>> {
                 
             };
-            var fileName = "normal.ini";
+            var fileName = "testdata/normal_withoutmark.ini";
             var content = File.ReadAllText(fileName);
             IniBody body = new(content);
             foreach (var q in queries)
