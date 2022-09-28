@@ -1,47 +1,24 @@
 ﻿namespace CSharpLearn.Async
 {
-    public class NormalTask
-    {
-        public string Input;
-        public string? Output { get; set; }
-
-        public NormalTask(string input)
-        { 
-            Input = input;
-        }
-
-        public void Run()
-        {
-            Output = $"hello world {Input}";
-            Console.WriteLine(Output);
-        }
-    }
     class HelloWorld
     {
 
-        static Task RunTask(NormalTask task)
+        static async Task HelloWorldWrites(int duration, int idx)
         {
-            return Task.Run(() => 
-            { 
-                task.Run();
-            });
-        }
+            Console.WriteLine($"hello world {idx} begin");
+            await Task.Delay(duration);
+            Console.WriteLine($"hello world {idx} end");
 
-        static public void Main(string[] args)
+        }
+        static public async Task Main(string[] args)
         {
-            List<Task> resList = new();
-            List<NormalTask> nList = new();
-            for (int i = 0; i < 10; i++) 
-            {
-                NormalTask t = new(i.ToString());
-                nList.Add(t);
-                resList.Add(RunTask(t));
-            }
-            Task.WhenAll(resList).Wait();
-            foreach (var aTask in nList)
-            {
-                Console.WriteLine($"real result {aTask.Output}");
-            }
+            var t1 = HelloWorldWrites(10, 1);
+            var t2 = HelloWorldWrites(10, 2);
+            var t3 = HelloWorldWrites(10, 3);
+
+            await t3;
+            await t2;
+            await t1;
         }
     }
 
